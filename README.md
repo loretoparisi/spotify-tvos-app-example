@@ -1,2 +1,2 @@
-# spotify-tvos-app-example
-A example tvOS app using the Spotify framework
+# spotify-tvos-framework-example
+A (very) basic Example of a tvOS application using the Spotify Framework.

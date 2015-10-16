@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841D3E731BD125120008E818 /* spotify-tvos-framework-example.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3E721BD125120008E818 /* spotify-tvos-framework-example.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		841D3EC91BD125870008E818 /* SpotifyHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3EC71BD125870008E818 /* SpotifyHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		841D3ECA1BD125870008E818 /* SpotifyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841D3EC81BD125870008E818 /* SpotifyHelper.m */; };
+		841D3ED31BD1285D0008E818 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841D3ED21BD1285D0008E818 /* main.m */; };
+		841D3ED61BD1285D0008E818 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841D3ED51BD1285D0008E818 /* AppDelegate.m */; };
+		841D3ED91BD1285D0008E818 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841D3ED81BD1285D0008E818 /* FirstViewController.m */; };
+		841D3EDC1BD1285D0008E818 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841D3EDB1BD1285D0008E818 /* SecondViewController.m */; };
+		841D3EDF1BD1285D0008E818 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841D3EDD1BD1285D0008E818 /* Main.storyboard */; };
+		841D3EE11BD1285D0008E818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841D3EE01BD1285D0008E818 /* Assets.xcassets */; };
+		841D3EE91BD129200008E818 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3EE81BD129200008E818 /* AVFoundation.framework */; };
+		841D3EEB1BD129430008E818 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3EEA1BD129430008E818 /* SystemConfiguration.framework */; };
+		841D3EEC1BD129FE0008E818 /* spotifyFrameworkExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3E6F1BD125120008E818 /* spotifyFrameworkExample.framework */; };
+		841D3EEF1BD12B270008E818 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3EEE1BD12B270008E818 /* CoreAudio.framework */; };
+		841D3EF41BD12BA30008E818 /* spotifyFrameworkExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3E6F1BD125120008E818 /* spotifyFrameworkExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		841D3F221BD13A3A0008E818 /* Spotify.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3EFD1BD13A3A0008E818 /* Spotify.h */; };
+		841D3F231BD13A3A0008E818 /* SPTAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3EFE1BD13A3A0008E818 /* SPTAlbum.h */; };
+		841D3F241BD13A3A0008E818 /* SPTArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3EFF1BD13A3A0008E818 /* SPTArtist.h */; };
+		841D3F251BD13A3A0008E818 /* SPTAudioStreamingController.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F001BD13A3A0008E818 /* SPTAudioStreamingController.h */; };
+		841D3F261BD13A3A0008E818 /* SPTAudioStreamingController_ErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F011BD13A3A0008E818 /* SPTAudioStreamingController_ErrorCodes.h */; };
+		841D3F271BD13A3A0008E818 /* SPTAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F021BD13A3A0008E818 /* SPTAuth.h */; };
+		841D3F281BD13A3A0008E818 /* SPTAuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F031BD13A3A0008E818 /* SPTAuthViewController.h */; };
+		841D3F291BD13A3A0008E818 /* SPTBrowse.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F041BD13A3A0008E818 /* SPTBrowse.h */; };
+		841D3F2A1BD13A3A0008E818 /* SPTCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F051BD13A3A0008E818 /* SPTCircularBuffer.h */; };
+		841D3F2B1BD13A3A0008E818 /* SPTConnectButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F061BD13A3A0008E818 /* SPTConnectButton.h */; };
+		841D3F2C1BD13A3A0008E818 /* SPTCoreAudioController.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F071BD13A3A0008E818 /* SPTCoreAudioController.h */; };
+		841D3F2D1BD13A3A0008E818 /* SPTDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F081BD13A3A0008E818 /* SPTDiskCache.h */; };
+		841D3F2E1BD13A3A0008E818 /* SPTDiskCaching.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F091BD13A3A0008E818 /* SPTDiskCaching.h */; };
+		841D3F2F1BD13A3A0008E818 /* SPTEmbeddedImages.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0A1BD13A3A0008E818 /* SPTEmbeddedImages.h */; };
+		841D3F301BD13A3A0008E818 /* SPTFeaturedPlaylistList.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0B1BD13A3A0008E818 /* SPTFeaturedPlaylistList.h */; };
+		841D3F311BD13A3A0008E818 /* SPTFollow.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0C1BD13A3A0008E818 /* SPTFollow.h */; };
+		841D3F321BD13A3A0008E818 /* SPTImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0D1BD13A3A0008E818 /* SPTImage.h */; };
+		841D3F331BD13A3A0008E818 /* SPTJSONDecoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0E1BD13A3A0008E818 /* SPTJSONDecoding.h */; };
+		841D3F341BD13A3A0008E818 /* SPTListPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F0F1BD13A3A0008E818 /* SPTListPage.h */; };
+		841D3F351BD13A3A0008E818 /* SPTPartialAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F101BD13A3A0008E818 /* SPTPartialAlbum.h */; };
+		841D3F361BD13A3A0008E818 /* SPTPartialArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F111BD13A3A0008E818 /* SPTPartialArtist.h */; };
+		841D3F371BD13A3A0008E818 /* SPTPartialObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F121BD13A3A0008E818 /* SPTPartialObject.h */; };
+		841D3F381BD13A3A0008E818 /* SPTPartialPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F131BD13A3A0008E818 /* SPTPartialPlaylist.h */; };
+		841D3F391BD13A3A0008E818 /* SPTPartialTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F141BD13A3A0008E818 /* SPTPartialTrack.h */; };
+		841D3F3A1BD13A3A0008E818 /* SPTPlaylistList.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F151BD13A3A0008E818 /* SPTPlaylistList.h */; };
+		841D3F3B1BD13A3A0008E818 /* SPTPlaylistSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F161BD13A3A0008E818 /* SPTPlaylistSnapshot.h */; };
+		841D3F3C1BD13A3A0008E818 /* SPTPlaylistTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F171BD13A3A0008E818 /* SPTPlaylistTrack.h */; };
+		841D3F3D1BD13A3A0008E818 /* SPTPlayOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F181BD13A3A0008E818 /* SPTPlayOptions.h */; };
+		841D3F3E1BD13A3A0008E818 /* SPTRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F191BD13A3A0008E818 /* SPTRequest.h */; };
+		841D3F3F1BD13A3A0008E818 /* SPTSavedTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1A1BD13A3A0008E818 /* SPTSavedTrack.h */; };
+		841D3F401BD13A3A0008E818 /* SPTSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1B1BD13A3A0008E818 /* SPTSearch.h */; };
+		841D3F411BD13A3A0008E818 /* SPTSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1C1BD13A3A0008E818 /* SPTSession.h */; };
+		841D3F421BD13A3A0008E818 /* SPTTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1D1BD13A3A0008E818 /* SPTTrack.h */; };
+		841D3F431BD13A3A0008E818 /* SPTTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1E1BD13A3A0008E818 /* SPTTypes.h */; };
+		841D3F441BD13A3A0008E818 /* SPTUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F1F1BD13A3A0008E818 /* SPTUser.h */; };
+		841D3F451BD13A3A0008E818 /* SPTYourMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 841D3F201BD13A3A0008E818 /* SPTYourMusic.h */; };
+		841D3F461BD13A3A0008E818 /* Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3F211BD13A3A0008E818 /* Spotify.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		841D3EF51BD12BBD0008E818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 841D3E661BD125120008E818 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841D3E6E1BD125120008E818;
+			remoteInfo = "spotify-tvos-framework-example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		841D3EF31BD12B9E0008E818 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				841D3EF41BD12BA30008E818 /* spotifyFrameworkExample.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		841D3E6F1BD125120008E818 /* spotifyFrameworkExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = spotifyFrameworkExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841D3E721BD125120008E818 /* spotify-tvos-framework-example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spotify-tvos-framework-example.h"; sourceTree = "<group>"; };
+		841D3E741BD125120008E818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841D3EC71BD125870008E818 /* SpotifyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyHelper.h; sourceTree = "<group>"; };
+		841D3EC81BD125870008E818 /* SpotifyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyHelper.m; sourceTree = "<group>"; };
+		841D3ECF1BD1285C0008E818 /* spotify-tvos-app-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spotify-tvos-app-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841D3ED21BD1285D0008E818 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		841D3ED41BD1285D0008E818 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		841D3ED51BD1285D0008E818 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		841D3ED71BD1285D0008E818 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		841D3ED81BD1285D0008E818 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		841D3EDA1BD1285D0008E818 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		841D3EDB1BD1285D0008E818 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		841D3EDE1BD1285D0008E818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		841D3EE01BD1285D0008E818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		841D3EE21BD1285D0008E818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841D3EE81BD129200008E818 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		841D3EEA1BD129430008E818 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		841D3EEE1BD12B270008E818 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		841D3EFD1BD13A3A0008E818 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		841D3EFE1BD13A3A0008E818 /* SPTAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAlbum.h; sourceTree = "<group>"; };
+		841D3EFF1BD13A3A0008E818 /* SPTArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTArtist.h; sourceTree = "<group>"; };
+		841D3F001BD13A3A0008E818 /* SPTAudioStreamingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAudioStreamingController.h; sourceTree = "<group>"; };
+		841D3F011BD13A3A0008E818 /* SPTAudioStreamingController_ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAudioStreamingController_ErrorCodes.h; sourceTree = "<group>"; };
+		841D3F021BD13A3A0008E818 /* SPTAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAuth.h; sourceTree = "<group>"; };
+		841D3F031BD13A3A0008E818 /* SPTAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAuthViewController.h; sourceTree = "<group>"; };
+		841D3F041BD13A3A0008E818 /* SPTBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTBrowse.h; sourceTree = "<group>"; };
+		841D3F051BD13A3A0008E818 /* SPTCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTCircularBuffer.h; sourceTree = "<group>"; };
+		841D3F061BD13A3A0008E818 /* SPTConnectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTConnectButton.h; sourceTree = "<group>"; };
+		841D3F071BD13A3A0008E818 /* SPTCoreAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTCoreAudioController.h; sourceTree = "<group>"; };
+		841D3F081BD13A3A0008E818 /* SPTDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTDiskCache.h; sourceTree = "<group>"; };
+		841D3F091BD13A3A0008E818 /* SPTDiskCaching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTDiskCaching.h; sourceTree = "<group>"; };
+		841D3F0A1BD13A3A0008E818 /* SPTEmbeddedImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTEmbeddedImages.h; sourceTree = "<group>"; };
+		841D3F0B1BD13A3A0008E818 /* SPTFeaturedPlaylistList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTFeaturedPlaylistList.h; sourceTree = "<group>"; };
+		841D3F0C1BD13A3A0008E818 /* SPTFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTFollow.h; sourceTree = "<group>"; };
+		841D3F0D1BD13A3A0008E818 /* SPTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTImage.h; sourceTree = "<group>"; };
+		841D3F0E1BD13A3A0008E818 /* SPTJSONDecoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTJSONDecoding.h; sourceTree = "<group>"; };
+		841D3F0F1BD13A3A0008E818 /* SPTListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTListPage.h; sourceTree = "<group>"; };
+		841D3F101BD13A3A0008E818 /* SPTPartialAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPartialAlbum.h; sourceTree = "<group>"; };
+		841D3F111BD13A3A0008E818 /* SPTPartialArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPartialArtist.h; sourceTree = "<group>"; };
+		841D3F121BD13A3A0008E818 /* SPTPartialObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPartialObject.h; sourceTree = "<group>"; };
+		841D3F131BD13A3A0008E818 /* SPTPartialPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPartialPlaylist.h; sourceTree = "<group>"; };
+		841D3F141BD13A3A0008E818 /* SPTPartialTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPartialTrack.h; sourceTree = "<group>"; };
+		841D3F151BD13A3A0008E818 /* SPTPlaylistList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPlaylistList.h; sourceTree = "<group>"; };
+		841D3F161BD13A3A0008E818 /* SPTPlaylistSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPlaylistSnapshot.h; sourceTree = "<group>"; };
+		841D3F171BD13A3A0008E818 /* SPTPlaylistTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPlaylistTrack.h; sourceTree = "<group>"; };
+		841D3F181BD13A3A0008E818 /* SPTPlayOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPlayOptions.h; sourceTree = "<group>"; };
+		841D3F191BD13A3A0008E818 /* SPTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTRequest.h; sourceTree = "<group>"; };
+		841D3F1A1BD13A3A0008E818 /* SPTSavedTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSavedTrack.h; sourceTree = "<group>"; };
+		841D3F1B1BD13A3A0008E818 /* SPTSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSearch.h; sourceTree = "<group>"; };
+		841D3F1C1BD13A3A0008E818 /* SPTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSession.h; sourceTree = "<group>"; };
+		841D3F1D1BD13A3A0008E818 /* SPTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTTrack.h; sourceTree = "<group>"; };
+		841D3F1E1BD13A3A0008E818 /* SPTTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTTypes.h; sourceTree = "<group>"; };
+		841D3F1F1BD13A3A0008E818 /* SPTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTUser.h; sourceTree = "<group>"; };
+		841D3F201BD13A3A0008E818 /* SPTYourMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTYourMusic.h; sourceTree = "<group>"; };
+		841D3F211BD13A3A0008E818 /* Spotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Spotify.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		841D3E6B1BD125120008E818 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3EEF1BD12B270008E818 /* CoreAudio.framework in Frameworks */,
+				841D3EEB1BD129430008E818 /* SystemConfiguration.framework in Frameworks */,
+				841D3F461BD13A3A0008E818 /* Spotify.a in Frameworks */,
+				841D3EE91BD129200008E818 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841D3ECC1BD1285C0008E818 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3EEC1BD129FE0008E818 /* spotifyFrameworkExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		841D3E651BD125120008E818 = {
+			isa = PBXGroup;
+			children = (
+				841D3EED1BD12AE90008E818 /* Frameworks */,
+				841D3E711BD125120008E818 /* spotify-tvos-framework-example */,
+				841D3ED01BD1285D0008E818 /* spotify-tvos-app-example */,
+				841D3E701BD125120008E818 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		841D3E701BD125120008E818 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841D3E6F1BD125120008E818 /* spotifyFrameworkExample.framework */,
+				841D3ECF1BD1285C0008E818 /* spotify-tvos-app-example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841D3E711BD125120008E818 /* spotify-tvos-framework-example */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EFB1BD13A3A0008E818 /* SpotifySDK */,
+				841D3EC61BD125770008E818 /* Classes */,
+				841D3E721BD125120008E818 /* spotify-tvos-framework-example.h */,
+				841D3E741BD125120008E818 /* Info.plist */,
+			);
+			path = "spotify-tvos-framework-example";
+			sourceTree = "<group>";
+		};
+		841D3EC61BD125770008E818 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EC71BD125870008E818 /* SpotifyHelper.h */,
+				841D3EC81BD125870008E818 /* SpotifyHelper.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		841D3ED01BD1285D0008E818 /* spotify-tvos-app-example */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EF81BD131CE0008E818 /* Delegate */,
+				841D3EF71BD131C80008E818 /* Controller */,
+				841D3EF91BD131D50008E818 /* Storyboard */,
+				841D3EFA1BD131DD0008E818 /* Resources */,
+				841D3ED11BD1285D0008E818 /* Supporting Files */,
+			);
+			path = "spotify-tvos-app-example";
+			sourceTree = "<group>";
+		};
+		841D3ED11BD1285D0008E818 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				841D3ED21BD1285D0008E818 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		841D3EED1BD12AE90008E818 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EEE1BD12B270008E818 /* CoreAudio.framework */,
+				841D3EEA1BD129430008E818 /* SystemConfiguration.framework */,
+				841D3EE81BD129200008E818 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		841D3EF71BD131C80008E818 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				841D3ED71BD1285D0008E818 /* FirstViewController.h */,
+				841D3ED81BD1285D0008E818 /* FirstViewController.m */,
+				841D3EDA1BD1285D0008E818 /* SecondViewController.h */,
+				841D3EDB1BD1285D0008E818 /* SecondViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		841D3EF81BD131CE0008E818 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				841D3ED41BD1285D0008E818 /* AppDelegate.h */,
+				841D3ED51BD1285D0008E818 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		841D3EF91BD131D50008E818 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EDD1BD1285D0008E818 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		841D3EFA1BD131DD0008E818 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EE01BD1285D0008E818 /* Assets.xcassets */,
+				841D3EE21BD1285D0008E818 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		841D3EFB1BD13A3A0008E818 /* SpotifySDK */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EFC1BD13A3A0008E818 /* Headers */,
+				841D3F211BD13A3A0008E818 /* Spotify.a */,
+			);
+			name = SpotifySDK;
+			path = Classes/SpotifySDK;
+			sourceTree = "<group>";
+		};
+		841D3EFC1BD13A3A0008E818 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				841D3EFD1BD13A3A0008E818 /* Spotify.h */,
+				841D3EFE1BD13A3A0008E818 /* SPTAlbum.h */,
+				841D3EFF1BD13A3A0008E818 /* SPTArtist.h */,
+				841D3F001BD13A3A0008E818 /* SPTAudioStreamingController.h */,
+				841D3F011BD13A3A0008E818 /* SPTAudioStreamingController_ErrorCodes.h */,
+				841D3F021BD13A3A0008E818 /* SPTAuth.h */,
+				841D3F031BD13A3A0008E818 /* SPTAuthViewController.h */,
+				841D3F041BD13A3A0008E818 /* SPTBrowse.h */,
+				841D3F051BD13A3A0008E818 /* SPTCircularBuffer.h */,
+				841D3F061BD13A3A0008E818 /* SPTConnectButton.h */,
+				841D3F071BD13A3A0008E818 /* SPTCoreAudioController.h */,
+				841D3F081BD13A3A0008E818 /* SPTDiskCache.h */,
+				841D3F091BD13A3A0008E818 /* SPTDiskCaching.h */,
+				841D3F0A1BD13A3A0008E818 /* SPTEmbeddedImages.h */,
+				841D3F0B1BD13A3A0008E818 /* SPTFeaturedPlaylistList.h */,
+				841D3F0C1BD13A3A0008E818 /* SPTFollow.h */,
+				841D3F0D1BD13A3A0008E818 /* SPTImage.h */,
+				841D3F0E1BD13A3A0008E818 /* SPTJSONDecoding.h */,
+				841D3F0F1BD13A3A0008E818 /* SPTListPage.h */,
+				841D3F101BD13A3A0008E818 /* SPTPartialAlbum.h */,
+				841D3F111BD13A3A0008E818 /* SPTPartialArtist.h */,
+				841D3F121BD13A3A0008E818 /* SPTPartialObject.h */,
+				841D3F131BD13A3A0008E818 /* SPTPartialPlaylist.h */,
+				841D3F141BD13A3A0008E818 /* SPTPartialTrack.h */,
+				841D3F151BD13A3A0008E818 /* SPTPlaylistList.h */,
+				841D3F161BD13A3A0008E818 /* SPTPlaylistSnapshot.h */,
+				841D3F171BD13A3A0008E818 /* SPTPlaylistTrack.h */,
+				841D3F181BD13A3A0008E818 /* SPTPlayOptions.h */,
+				841D3F191BD13A3A0008E818 /* SPTRequest.h */,
+				841D3F1A1BD13A3A0008E818 /* SPTSavedTrack.h */,
+				841D3F1B1BD13A3A0008E818 /* SPTSearch.h */,
+				841D3F1C1BD13A3A0008E818 /* SPTSession.h */,
+				841D3F1D1BD13A3A0008E818 /* SPTTrack.h */,
+				841D3F1E1BD13A3A0008E818 /* SPTTypes.h */,
+				841D3F1F1BD13A3A0008E818 /* SPTUser.h */,
+				841D3F201BD13A3A0008E818 /* SPTYourMusic.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		841D3E6C1BD125120008E818 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3F2F1BD13A3A0008E818 /* SPTEmbeddedImages.h in Headers */,
+				841D3F361BD13A3A0008E818 /* SPTPartialArtist.h in Headers */,
+				841D3F311BD13A3A0008E818 /* SPTFollow.h in Headers */,
+				841D3F271BD13A3A0008E818 /* SPTAuth.h in Headers */,
+				841D3F3F1BD13A3A0008E818 /* SPTSavedTrack.h in Headers */,
+				841D3F321BD13A3A0008E818 /* SPTImage.h in Headers */,
+				841D3F241BD13A3A0008E818 /* SPTArtist.h in Headers */,
+				841D3F231BD13A3A0008E818 /* SPTAlbum.h in Headers */,
+				841D3F351BD13A3A0008E818 /* SPTPartialAlbum.h in Headers */,
+				841D3F3B1BD13A3A0008E818 /* SPTPlaylistSnapshot.h in Headers */,
+				841D3F281BD13A3A0008E818 /* SPTAuthViewController.h in Headers */,
+				841D3F341BD13A3A0008E818 /* SPTListPage.h in Headers */,
+				841D3F261BD13A3A0008E818 /* SPTAudioStreamingController_ErrorCodes.h in Headers */,
+				841D3F371BD13A3A0008E818 /* SPTPartialObject.h in Headers */,
+				841D3F391BD13A3A0008E818 /* SPTPartialTrack.h in Headers */,
+				841D3F3E1BD13A3A0008E818 /* SPTRequest.h in Headers */,
+				841D3F2B1BD13A3A0008E818 /* SPTConnectButton.h in Headers */,
+				841D3F441BD13A3A0008E818 /* SPTUser.h in Headers */,
+				841D3F401BD13A3A0008E818 /* SPTSearch.h in Headers */,
+				841D3F251BD13A3A0008E818 /* SPTAudioStreamingController.h in Headers */,
+				841D3F291BD13A3A0008E818 /* SPTBrowse.h in Headers */,
+				841D3F431BD13A3A0008E818 /* SPTTypes.h in Headers */,
+				841D3F2E1BD13A3A0008E818 /* SPTDiskCaching.h in Headers */,
+				841D3F3A1BD13A3A0008E818 /* SPTPlaylistList.h in Headers */,
+				841D3EC91BD125870008E818 /* SpotifyHelper.h in Headers */,
+				841D3F451BD13A3A0008E818 /* SPTYourMusic.h in Headers */,
+				841D3F421BD13A3A0008E818 /* SPTTrack.h in Headers */,
+				841D3F381BD13A3A0008E818 /* SPTPartialPlaylist.h in Headers */,
+				841D3F2A1BD13A3A0008E818 /* SPTCircularBuffer.h in Headers */,
+				841D3F411BD13A3A0008E818 /* SPTSession.h in Headers */,
+				841D3E731BD125120008E818 /* spotify-tvos-framework-example.h in Headers */,
+				841D3F3D1BD13A3A0008E818 /* SPTPlayOptions.h in Headers */,
+				841D3F301BD13A3A0008E818 /* SPTFeaturedPlaylistList.h in Headers */,
+				841D3F221BD13A3A0008E818 /* Spotify.h in Headers */,
+				841D3F331BD13A3A0008E818 /* SPTJSONDecoding.h in Headers */,
+				841D3F2D1BD13A3A0008E818 /* SPTDiskCache.h in Headers */,
+				841D3F2C1BD13A3A0008E818 /* SPTCoreAudioController.h in Headers */,
+				841D3F3C1BD13A3A0008E818 /* SPTPlaylistTrack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		841D3E6E1BD125120008E818 /* spotify-tvos-framework-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841D3E771BD125120008E818 /* Build configuration list for PBXNativeTarget "spotify-tvos-framework-example" */;
+			buildPhases = (
+				841D3E6A1BD125120008E818 /* Sources */,
+				841D3E6B1BD125120008E818 /* Frameworks */,
+				841D3E6C1BD125120008E818 /* Headers */,
+				841D3E6D1BD125120008E818 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "spotify-tvos-framework-example";
+			productName = "spotify-tvos-framework-example";
+			productReference = 841D3E6F1BD125120008E818 /* spotifyFrameworkExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		841D3ECE1BD1285C0008E818 /* spotify-tvos-app-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841D3EE31BD1285D0008E818 /* Build configuration list for PBXNativeTarget "spotify-tvos-app-example" */;
+			buildPhases = (
+				841D3ECB1BD1285C0008E818 /* Sources */,
+				841D3ECC1BD1285C0008E818 /* Frameworks */,
+				841D3ECD1BD1285C0008E818 /* Resources */,
+				841D3EF31BD12B9E0008E818 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841D3EF61BD12BBD0008E818 /* PBXTargetDependency */,
+			);
+			name = "spotify-tvos-app-example";
+			productName = "spotify-tvos-app-example";
+			productReference = 841D3ECF1BD1285C0008E818 /* spotify-tvos-app-example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		841D3E661BD125120008E818 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = loretoparisi;
+				TargetAttributes = {
+					841D3E6E1BD125120008E818 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					841D3ECE1BD1285C0008E818 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = P495UABH9W;
+					};
+				};
+			};
+			buildConfigurationList = 841D3E691BD125120008E818 /* Build configuration list for PBXProject "spotify-tvos-framework-example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 841D3E651BD125120008E818;
+			productRefGroup = 841D3E701BD125120008E818 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				841D3E6E1BD125120008E818 /* spotify-tvos-framework-example */,
+				841D3ECE1BD1285C0008E818 /* spotify-tvos-app-example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		841D3E6D1BD125120008E818 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841D3ECD1BD1285C0008E818 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3EE11BD1285D0008E818 /* Assets.xcassets in Resources */,
+				841D3EDF1BD1285D0008E818 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		841D3E6A1BD125120008E818 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3ECA1BD125870008E818 /* SpotifyHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841D3ECB1BD1285C0008E818 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841D3EDC1BD1285D0008E818 /* SecondViewController.m in Sources */,
+				841D3ED61BD1285D0008E818 /* AppDelegate.m in Sources */,
+				841D3ED91BD1285D0008E818 /* FirstViewController.m in Sources */,
+				841D3ED31BD1285D0008E818 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		841D3EF61BD12BBD0008E818 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841D3E6E1BD125120008E818 /* spotify-tvos-framework-example */;
+			targetProxy = 841D3EF51BD12BBD0008E818 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		841D3EDD1BD1285D0008E818 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841D3EDE1BD1285D0008E818 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		841D3E751BD125120008E818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		841D3E761BD125120008E818 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		841D3E781BD125120008E818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "spotify-tvos-framework-example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spotify-tvos-framework-example/SpotifySDK",
+					"$(PROJECT_DIR)/spotify-tvos-framework-example/Classes/SpotifySDK",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loretoparisi.spotify-tvos-framework-example";
+				PRODUCT_NAME = spotifyFrameworkExample;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Debug;
+		};
+		841D3E791BD125120008E818 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "spotify-tvos-framework-example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spotify-tvos-framework-example/SpotifySDK",
+					"$(PROJECT_DIR)/spotify-tvos-framework-example/Classes/SpotifySDK",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loretoparisi.spotify-tvos-framework-example";
+				PRODUCT_NAME = spotifyFrameworkExample;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Release;
+		};
+		841D3EE41BD1285D0008E818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "spotify-tvos-app-example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loretoparisi.spotify-tvos-app-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		841D3EE51BD1285D0008E818 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "spotify-tvos-app-example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loretoparisi.spotify-tvos-app-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		841D3E691BD125120008E818 /* Build configuration list for PBXProject "spotify-tvos-framework-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841D3E751BD125120008E818 /* Debug */,
+				841D3E761BD125120008E818 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841D3E771BD125120008E818 /* Build configuration list for PBXNativeTarget "spotify-tvos-framework-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841D3E781BD125120008E818 /* Debug */,
+				841D3E791BD125120008E818 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841D3EE31BD1285D0008E818 /* Build configuration list for PBXNativeTarget "spotify-tvos-app-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841D3EE41BD1285D0008E818 /* Debug */,
+				841D3EE51BD1285D0008E818 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 841D3E661BD125120008E818 /* Project object */;
+}

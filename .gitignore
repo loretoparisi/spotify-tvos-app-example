@@ -1,5 +1,7 @@
 # Xcode
 #
+spotify-tvos-framework-example/Classes/SpotifySDK/
+.DS_Store
 build/
 *.pbxuser
 !default.pbxuser
