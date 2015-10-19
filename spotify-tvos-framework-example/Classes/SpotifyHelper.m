@@ -91,6 +91,97 @@ NSString * const kSpotifyPlayerException                                     = @
     }];
 }
 
+#pragma mark - Spotify Player API
+
+/**
+ * Play a Spotify Track Id
+ * @param spotifyId NSString The Spotify Track Id
+ */
+- (void)playTrackWithSpotifyId:(NSString*)spotifyId queue:(BOOL)queue completion:(void (^)(NSError *error))completion {
+    
+    NSString *trackURI = [NSString stringWithFormat:@"spotify:track:%@",spotifyId];
+    [self fetchTrack:spotifyId useCountry:YES completion:^(SPTTrack *track, NSError *error) {
+        
+        /**
+         {
+         error =     {
+         message = "invalid id";
+         status = 400;
+         };
+         }
+         */
+        if(error) {
+            NSLog(@"Error fetching track %@:\n%@ ErrorCode:%ld", trackURI,
+                  error.localizedDescription,
+                  error.code);
+            return;
+        }
+        
+        NSString *newTrackURI = [((NSDictionary*)track) objectForKey:@"uri"];
+        if(!streamingPlayer.loggedIn) {
+            [streamingPlayer loginWithSession:self.session
+                                     callback:^(NSError *error) {
+                                         if (!error) {
+                                             if(queue) {
+                                                 [streamingPlayer queueURIs:[NSArray arrayWithObject:[NSURL URLWithString:newTrackURI]]
+                                                                 clearQueue:YES callback:^(NSError *error) {
+                                                                     if(error) {
+                                                                         NSLog(@"Error occurred %@", error.localizedDescription);
+                                                                     }
+                                                                     if(completion) {
+                                                                         completion(error);
+                                                                     }
+                                                                 }];
+                                                 
+                                             } else {
+                                                 [streamingPlayer playURIs:[NSArray arrayWithObject:[NSURL URLWithString:newTrackURI]]
+                                                                 fromIndex:0
+                                                                  callback:^(NSError *error) {
+                                                                      if(error) {
+                                                                          NSLog(@"Error occurred %@", error.localizedDescription);
+                                                                      }
+                                                                      if(completion) {
+                                                                          completion(error);
+                                                                      }
+                                                                  }];
+                                             }
+                                         } else {
+                                             NSLog(@"Error occurred %@", error.localizedDescription);
+                                             if(completion) {
+                                                 completion(error);
+                                             }
+                                         }
+                                     }];
+            return;
+        }
+        if(queue) {
+            [streamingPlayer queueURIs:[NSArray arrayWithObject:[NSURL URLWithString:newTrackURI]]
+                            clearQueue:YES callback:^(NSError *error) {
+                                if(error) {
+                                    NSLog(@"Error occurred %@", error.localizedDescription);
+                                }
+                                if(completion) {
+                                    completion(error);
+                                }
+                            }];
+            
+        } else {
+            [streamingPlayer playURIs:[NSArray arrayWithObject:[NSURL URLWithString:newTrackURI]]
+                            fromIndex:0
+                             callback:^(NSError *error) {
+                                 if(error) {
+                                     NSLog(@"Error occurred %@", error.localizedDescription);
+                                 }
+                                 if(completion) {
+                                     completion(error);
+                                 }
+                             }];
+            
+        }
+        
+    }];
+}
+
 #pragma mark - Spotify Web API
 
 /**

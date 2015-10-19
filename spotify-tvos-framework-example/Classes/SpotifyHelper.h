@@ -14,6 +14,16 @@
 
 - (void)initSpotify;
 
+#pragma mark - Spotify Player API
+
+/**
+ * Play a Spotify Track Id
+ * @param spotifyId NSString The Spotify Track Id
+ */
+- (void)playTrackWithSpotifyId:(NSString*)spotifyId
+                        queue:(BOOL)queue
+                        completion:(void (^)(NSError *error))completion;
+
 #pragma mark - Web API
 
 /**
