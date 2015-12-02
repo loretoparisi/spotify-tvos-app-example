@@ -573,6 +573,232 @@ NSString * const kSpotifyPlayerException                                     = @
                                  }] resume];
 }
 
+#pragma mark -
+#pragma mark SDK Search API
+
+/**
+ * Search Spotify Track
+ */
+-(void)searchSpotifyTrackWithQuery:(NSString *)searchQuery
+                       accessToken:(NSString*)accessToken
+                        completion:(void (^)(id results, NSError* error))completion {
+    [self searchSpotifyWithQuery:searchQuery ofQueryType:SPTQueryTypeTrack
+                     accessToken:accessToken
+                      completion:completion];
+}
+
+/**
+ * Search Spotify Artist
+ */
+-(void)searchSpotifyArtistWithQuery:(NSString *)searchQuery
+                        accessToken:(NSString*)accessToken
+                         completion:(void (^)(id results, NSError* error))completion {
+    [self searchSpotifyWithQuery:searchQuery ofQueryType:SPTQueryTypeArtist
+                     accessToken:accessToken
+                      completion:completion];
+}
+
+/**
+ * Search Spotify Album
+ */
+-(void)searchSpotifyAlbumWithQuery:(NSString *)searchQuery
+                       accessToken:(NSString*)accessToken
+                        completion:(void (^)(id results, NSError* error))completion {
+    [self searchSpotifyWithQuery:searchQuery ofQueryType:SPTQueryTypeAlbum
+                     accessToken:accessToken
+                      completion:completion];
+}
+
+/** Performs a search with a given query and offset
+ 
+ @param searchQuery The query to pass to the search.
+ @param searchQueryType The type of search to do.
+ @param searchPageOffset Which page of results to return.
+ @param session An authenticated session. Can be `nil`.
+ @param block The block to be called when the operation is complete. The block will pass a Spotify SDK metadata object on success, otherwise an error.
+ */
+-(void)searchSpotifyWithQuery:(NSString *)searchQuery ofQueryType:(SPTSearchQueryType)searchQueryType
+                  accessToken:(NSString*)accessToken
+                   completion:(void (^)(id results, NSError* error))completion {
+    
+    NSString *cc = [[[NSLocale currentLocale] objectForKey:NSLocaleCountryCode] uppercaseString];
+    [SPTSearch performSearchWithQuery:searchQuery queryType:searchQueryType accessToken:accessToken market:cc
+                             callback:^(NSError *error, id object) {
+                                 if(error==nil && object) {
+                                     [SpotifyHelper didFetchListPageForSession:self.session
+                                                                 finalCallback:^(NSError *error, NSArray *items) {
+                                                                     if( items ) {
+                                                                         NSArray *resultList = [[NSArray alloc] initWithArray:items];
+                                                                         for(NSObject *elem in resultList) {
+                                                                             if(searchQueryType==SPTQueryTypeTrack) { // track objects
+                                                                                 SPTTrack *item = (SPTTrack*)elem;
+                                                                                 NSLog(@"Search Results Track :%@ uri:%@",
+                                                                                       item.name,
+                                                                                       item.uri);
+                                                                             }
+                                                                             else if(searchQueryType==SPTQueryTypeAlbum) { // album objects
+                                                                                 SPTAlbum *item = (SPTAlbum*)elem;
+                                                                                 NSLog(@"Search Results Album :%@ uri:%@",
+                                                                                       item.name,
+                                                                                       item.uri);
+                                                                             }
+                                                                             else if(searchQueryType==SPTQueryTypeArtist) { // artist objects
+                                                                                 SPTArtist *item = (SPTArtist*)elem;
+                                                                                 NSLog(@"Search Results Artist :%@ uri:%@",
+                                                                                       item.name,
+                                                                                       item.uri);
+                                                                             }
+                                                                         }
+                                                                         if(completion) completion(resultList, nil);
+                                                                     }
+                                                                     else { // didFetchListPageForSession error
+                                                                         if(completion) completion(nil, error);
+                                                                     }
+                                                                 } error:nil object:object allItems:[NSMutableArray array]];
+                                     
+                                 }
+                                 else { // performSearchWithQuery error
+                                     if(completion) completion(nil, error);
+                                 }
+                             }]; //SPTSearch
+    
+}
+
+#pragma mark
+#pragma mark - Class Methods
+
+/**
+ * Recursive method to fetch a list SPTListPage of items.
+ * Supported SPTListPage subtypes are SPTListPage, SPTPlaylistList, SPTPlaylistSnapshot
+ */
++ (void)didFetchListPageForSession:(SPTSession *)session finalCallback:(void (^)(NSError*, NSArray*))finalCallback error:(NSError *)error object:(id)object allItems:(NSMutableArray *)allItems
+{
+    if (error != nil) {
+        finalCallback(error, nil);
+    } else {
+        
+        if ([object isKindOfClass:[SPTPlaylistList class]]) { // playlists
+            
+            SPTPlaylistList *playlistList = (SPTPlaylistList *)object;
+            for (SPTPartialPlaylist *playlist in playlistList.items) {
+                [allItems addObject:playlist];
+            }
+            
+            if (playlistList.hasNextPage) { // has next
+                
+                [playlistList requestNextPageWithSession:session callback:^(NSError *error, id object) {
+                    [SpotifyHelper didFetchListPageForSession:session
+                                                finalCallback:finalCallback
+                                                        error:error
+                                                       object:object
+                                                     allItems:allItems];
+                }];
+                
+            } else { // ended
+                
+                finalCallback(nil, [allItems copy]);
+            }
+        }
+        else if ([object isKindOfClass:[SPTListPage class]]) { // page of items
+            
+            SPTListPage*listPage = (SPTListPage*)object;
+            for (SPTSavedTrack *track in listPage.items) {
+                [allItems addObject:track];
+            }
+            if (listPage.hasNextPage) { // has next
+                
+                [listPage requestNextPageWithSession:session callback:^(NSError *error, id object) {
+                    [SpotifyHelper didFetchListPageForSession:session
+                                                finalCallback:finalCallback
+                                                        error:error
+                                                       object:object
+                                                     allItems:allItems];
+                }];
+            }  else { // ended
+                
+                finalCallback(nil, [allItems copy]);
+            }
+        }
+        else if ([object isKindOfClass:[SPTPlaylistSnapshot class]]) { // page of items
+            
+            SPTPlaylistSnapshot*listPage = (SPTPlaylistSnapshot*)object;
+            SPTListPage *page = listPage.firstTrackPage;
+            for (SPTSavedTrack *track in page.items) {
+                [allItems addObject:track];
+            }
+            if (page.hasNextPage) { // has next
+                
+                [page requestNextPageWithSession:session callback:^(NSError *error, id object) {
+                    [SpotifyHelper didFetchListPageForSession:session
+                                                finalCallback:finalCallback
+                                                        error:error
+                                                       object:object
+                                                     allItems:allItems];
+                }];
+            }  else { // ended
+                
+                finalCallback(nil, [allItems copy]);
+            }
+        }
+        
+    }
+}
+
++ (void)fetchAllUserPlaylistsWithSession:(SPTSession *)session callback:(void (^)(NSError *, NSArray *))callback
+{
+    
+    [SPTPlaylistList playlistsForUserWithSession:session callback:^(NSError *error, id object) {
+        [SpotifyHelper didFetchListPageForSession:session
+                                    finalCallback:callback
+                                            error:error
+                                           object:object
+                                         allItems:[NSMutableArray array]];
+        
+    }];
+}
+
++ (void)fetchAllUserStarredTracksWithSession:(SPTSession *)session callback:(void (^)(NSError *, NSArray *))callback
+{
+    [SPTPlaylistSnapshot requestStarredListForUserWithSession:session callback:^(NSError *error, id object) {
+        [SpotifyHelper didFetchListPageForSession:session
+                                    finalCallback:callback
+                                            error:error
+                                           object:object
+                                         allItems:[NSMutableArray array]];
+    }];
+    
+}
+
++ (void)loadTracksForPlaylistForSession:(SPTSession *)session playlist:(SPTPlaylistSnapshot*)playlist completionHandler:(void (^)(id results, NSError* error))completion {
+    [SpotifyHelper didFetchTracksForSession:session playlistPage:playlist.firstTrackPage
+                              finalCallback:^(NSError *error, SPTListPage *finalPage) {
+                                  if (completion) {
+                                      completion(finalPage, error);
+                                  }
+                              }];
+}
+
++ (void)didFetchTracksForSession:(SPTSession *)session playlistPage:(SPTListPage *)listPage finalCallback:(void (^)(NSError*error, SPTListPage*finalPage))finalCallback {
+    if (listPage.hasNextPage && !listPage.isComplete) {
+        [listPage requestNextPageWithSession:session
+                                    callback:^(NSError *error, id object) {
+                                        if (error) {
+                                            if (finalCallback) {
+                                                finalCallback(error, nil);
+                                            }
+                                            return;
+                                        }
+                                        [SpotifyHelper didFetchTracksForSession:session playlistPage:[listPage pageByAppendingPage:object]
+                                                                  finalCallback:finalCallback];
+                                        
+                                    }];
+        return;
+    }
+    if (finalCallback) {
+        finalCallback(nil, listPage);
+    }
+}
+
 #pragma mark - Spotify Helpers
 
 /**

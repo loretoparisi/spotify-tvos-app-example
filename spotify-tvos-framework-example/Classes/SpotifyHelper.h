@@ -176,4 +176,27 @@
        useCountry:(BOOL)useCountry
        completion:(void (^)(id results, NSError* error))completion;
 
+#pragma mark -
+#pragma mark SDK Search API
+
+/**
+ * Search Spotify Track
+ */
+-(void)searchSpotifyTrackWithQuery:(NSString *)searchQuery
+                       accessToken:(NSString*)accessToken
+                        completion:(void (^)(id results, NSError* error))completion;
+
+/**
+ * Search Spotify Artist
+ */
+-(void)searchSpotifyArtistWithQuery:(NSString *)searchQuery
+                        accessToken:(NSString*)accessToken
+                         completion:(void (^)(id results, NSError* error))completion;
+/**
+ * Search Spotify Album
+ */
+-(void)searchSpotifyAlbumWithQuery:(NSString *)searchQuery
+                       accessToken:(NSString*)accessToken
+                        completion:(void (^)(id results, NSError* error))completion;
+
 @end
